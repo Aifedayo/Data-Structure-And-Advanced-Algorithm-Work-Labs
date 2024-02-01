@@ -8,4 +8,5 @@ once, regardless of how many times it appears in each list.
 def find_intersection(arr1, arr2):
     # using hash sets can be very effective for this 
     # problem since sets ony store unique values
+    
     hash_set = set()
