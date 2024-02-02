@@ -9,4 +9,23 @@ def find_intersection(arr1, arr2):
     # using hash sets can be very effective for this 
     # problem since sets ony store unique values
     
-    hash_set = set()
+    unique_set = set()
+    i = 0
+    if len(arr1) > len(arr2):
+        while i < len(arr1):
+            if arr1[i] in arr2:
+                unique_set.add(arr1[i])
+            i += 1
+    else:
+        while i < len(arr2):
+            if arr2[i] in arr1:
+                unique_set.add(arr2[i])
+            i += 1
+
+    return list(unique_set)
+
+list1 = [4, 9, 5]
+list2 = [9, 4, 9, 8, 4]
+
+print(find_intersection(list1, list2))
+            
