@@ -24,6 +24,13 @@ def find_intersection(arr1, arr2):
 
     return list(unique_set)
 
+    ###############################################
+    #            SIMPLIFIED SOLUTION              #
+    #   set1 = set(arr1)                          #
+    #   set2 = set(arr2)                          #
+    #   # Find the intersection of both sets      #
+    #   return list(set1 & set2)                  #
+    ###############################################
 list1 = [4, 9, 5]
 list2 = [9, 4, 9, 8, 4]
 
