@@ -5,7 +5,7 @@ def min_window(s, t):
         return ""
     
     dict_t = Counter(t)
-    required = len(dict_t) # Number of uniue characters in t
+    required = len(dict_t) # Number of unique characters in t
 
     left, right = 0, 0
 
