@@ -12,8 +12,13 @@ def duplicate_in_range(arr, k):
     for right in range(len(arr)):
         if arr[right] in unique_set:
             return True
+        
         unique_set.add(arr[right])
+
+        if len(unique_set) > k:
+            unique_set.remove(arr[right - k])
+        print(unique_set)
         
     return False
 
-print(duplicate_in_range(arr=[1,2,3,1,4,5],k=3))
+print(duplicate_in_range(arr=[1,2,3,4,1,5],k=3))
