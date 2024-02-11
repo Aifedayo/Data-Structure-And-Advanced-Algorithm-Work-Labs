@@ -16,8 +16,7 @@ def duplicate_in_range(arr, k):
         unique_set.add(arr[right])
 
         if len(unique_set) > k:
-            unique_set.remove(arr[right - k])
-        print(unique_set)
+            unique_set.remove(arr[right - k])\
         
     return False
 
