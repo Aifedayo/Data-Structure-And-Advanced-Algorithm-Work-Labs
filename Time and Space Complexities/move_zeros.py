@@ -20,6 +20,7 @@ def move_zeros(arr):
     for i in range(len(arr)):
         if arr[i] != 0:
             arr[zero_count], arr[i] = arr[i], arr[zero_count]
+            print(arr)
             zero_count += 1
     return arr
 
