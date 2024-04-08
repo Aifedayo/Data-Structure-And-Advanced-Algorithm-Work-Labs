@@ -1,6 +1,5 @@
-def find_majority_element(arr):
-
-    return max(set(arr), key=arr.count)
+def delete_at_pos(arr, pos):
+    return arr[:pos] + arr[pos+1:]
         
 
-print(find_majority_element([1,1,2,4,5,5,5,5]))
+print(delete_at_pos([1,1,2,4,5,5,5,5], 0))
