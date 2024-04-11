@@ -1,3 +1,8 @@
+"""
+A peak element in an array is an element that is greater than its neighbors. 
+Given an array nums, find a peak element and return its index. If there are multiple peaks, return the index of any one of the peaks.
+"""
+
 def peak_element(nums):
     left, right = 0, len(nums)-1
 
@@ -12,4 +17,4 @@ def peak_element(nums):
             left = mid + 1
 
 
-print(peak_element([1, 7, 4, 3, 5, 6, 4]))
+print(peak_element([1, 2, 1, 3, 5, 6, 4]))
