@@ -1,21 +1,17 @@
-def search_rotated(nums, target):
-    left, right = 0, len(nums)-1
+def square_root(value):
+    left, right = 0, value
 
     while left <= right:
         mid = (left + right) // 2
-        if nums[mid] == target:
+        mid_squared = mid*mid
+
+        if mid_squared == value:
             return mid
-        if nums[mid] >= nums[left]:
-            if target <= nums[mid] and target >= nums[left]:
-                right = mid - 1
-            else:
-                left = mid + 1
+        if mid_squared > value:
+            right = mid - 1
         else:
-            if target <= nums[mid] and target <= nums[left]:
-                right = mid - 1
-            else:
-                left = mid + 1
+            result = mid
+            left = mid + 1
+    return result
 
-    return -1
-
-print(search_rotated(nums=[4,5,6,7,0,1,2], target=2))
+print(square_root(8))
