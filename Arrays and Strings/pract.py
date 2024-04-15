@@ -1,17 +1,17 @@
-def square_root(value):
-    left, right = 0, value
+def anagram(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    freqmap = {}
 
-    while left <= right:
-        mid = (left + right) // 2
-        mid_squared = mid*mid
+    for i in range(len(s1)):
+        freqmap[s1[i]] = freqmap.get(s1[i], 0) + 1
+        freqmap[s2[i]] = freqmap.get(s2[i], 0) - 1
 
-        if mid_squared == value:
-            return mid
-        if mid_squared > value:
-            right = mid - 1
-        else:
-            result = mid
-            left = mid + 1
-    return result
+    for count in freqmap.values():
+        if count >= 1:
+            return False
+    
+    return True
 
-print(square_root(8))
+
+print(anagram('silent', 'lirten'))
