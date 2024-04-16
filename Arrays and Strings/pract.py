@@ -1,17 +1,18 @@
-def anagram(s1, s2):
-    if len(s1) != len(s2):
-        return False
+def can_form_palindrome(string):
     freqmap = {}
 
-    for i in range(len(s1)):
-        freqmap[s1[i]] = freqmap.get(s1[i], 0) + 1
-        freqmap[s2[i]] = freqmap.get(s2[i], 0) - 1
+    for char in string:
+        if char in freqmap:
+            freqmap[char] -= 1
 
-    for count in freqmap.values():
-        if count >= 1:
-            return False
-    
-    return True
+        else:
+            freqmap[char] = 1
+    max_count = sum(1 for value in freqmap.values() if value != 0)
+    return max_count <= 1
 
 
-print(anagram('silent', 'lirten'))
+
+print(can_form_palindrome("civic"))
+print(can_form_palindrome("ivicc"))
+print(can_form_palindrome("hello")) 
+print(can_form_palindrome("aabbh"))
