@@ -1,18 +1,16 @@
-def can_form_palindrome(string):
+"""
+Given a string, find the first non-repeating character. 
+If all characters are repeated, return None.
+"""
+def first_non_repeating(string):
     freqmap = {}
+    for i in range(len(string)):
+        freqmap[string[i]] = freqmap.get(string[i], 0) + 1
 
-    for char in string:
-        if char in freqmap:
-            freqmap[char] -= 1
-
-        else:
-            freqmap[char] = 1
-    max_count = sum(1 for value in freqmap.values() if value != 0)
-    return max_count <= 1
+    for key, value in freqmap.items():
+        if value == 1:
+            return key
+    return None
 
 
-
-print(can_form_palindrome("civic"))
-print(can_form_palindrome("ivicc"))
-print(can_form_palindrome("hello")) 
-print(can_form_palindrome("aabbh"))
+print(first_non_repeating('swiss'))
