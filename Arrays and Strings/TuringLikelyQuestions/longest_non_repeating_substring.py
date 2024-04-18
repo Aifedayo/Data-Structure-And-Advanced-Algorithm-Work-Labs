@@ -15,7 +15,6 @@ def longest_substring(string):
             
         char_set.add(string[right])
         
-
         max_length = max(max_length, right - left + 1)
     return max_length
 
