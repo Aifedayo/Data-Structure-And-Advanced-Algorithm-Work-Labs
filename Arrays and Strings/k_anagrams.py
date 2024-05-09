@@ -13,4 +13,4 @@ def k_anagrams(s1, s2, k):
     mismatch_count = 0
     for char in freq_s1:
         if char in freq_s2:
-            
+            mismatch_count += abs(freq_s1[char] - freq_s2[char])
