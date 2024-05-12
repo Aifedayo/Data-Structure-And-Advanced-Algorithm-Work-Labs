@@ -20,4 +20,4 @@ def k_anagrams(s1, s2, k):
     return mismatch_count // 2 <= k
 
 
-k_anagrams("anagram", "mangaar", 2)
+print(k_anagrams("anagram", "mangaar", 2))
