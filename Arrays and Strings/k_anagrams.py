@@ -18,3 +18,6 @@ def k_anagrams(s1, s2, k):
             mismatch_count += freq_s1[char]
 
     return mismatch_count // 2 <= k
+
+
+k_anagrams("anagram", "mangaar", 2)
