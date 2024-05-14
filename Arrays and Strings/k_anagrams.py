@@ -21,3 +21,4 @@ def k_anagrams(s1, s2, k):
 
 
 print(k_anagrams("anagram", "mangaar", 2))
+print(k_anagrams("anagram", "grammar", 3))
