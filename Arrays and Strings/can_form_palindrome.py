@@ -1,5 +1,8 @@
 def can_form_palindrome(s):
-    pass
+    if len(s) % 2 != 1:
+        return False # Early exit
+
+
 
 
 
