@@ -1,6 +1,8 @@
 def can_form_palindrome(s):
     if len(s) % 2 != 1:
         return False # Early exit
+    
+    # uSe hashmap
 
 
 
