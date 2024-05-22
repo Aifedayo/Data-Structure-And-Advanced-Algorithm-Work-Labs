@@ -3,6 +3,7 @@ def can_form_palindrome(s):
         return False # Early exit
     
     # uSe hashmap
+    freqmap = {}
 
 
 
