@@ -1,6 +1,6 @@
 def can_form_palindrome(s):
     
-    # uSe hashmap
+    # Use hashmap
     freqmap = {}
 
     for char in s:
