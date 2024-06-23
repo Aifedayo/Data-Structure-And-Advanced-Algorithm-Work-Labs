@@ -1,20 +1,25 @@
-def anagram(s1, s2):
-    if len(s1) != len(s2):
-        return False
-    
-    # using hashmap
-    freqmap1 = {}
-    freqmap2 = {}
+def longest_two_distinct(s):
+    left = 0
+    curr_sum = 0
+    max_sum = 0
 
-    for i in range(len(s1)):
-        freqmap1[s1[i]] = freqmap1.get(s1[i], 0) + 1
-        freqmap2[s2[i]] = freqmap2.get(s2[i], 0) + 1
+    freqmap = {}
+    for right in range(len(s)):
+        if s[right] in freqmap:
+            freqmap[s[right]] += 1
+        else:
+            freqmap[s[right]] = 1
 
-    for i in freqmap1:
-        if freqmap1[i] != freqmap2.get(i, 0):
-            return False
-    
-    return True
+        while len(freqmap) > 2:
+            freqmap[s[left]] -= 1
+            if freqmap[s[left]] == 0:
+                del freqmap[s[left]]
+            left += 1
+
+        max_sum = max(max_sum, right - left+1)
+
+    return max_sum
+            
     
 
-print(anagram('silent', 'listen'))
+print(longest_two_distinct("eceba"))
