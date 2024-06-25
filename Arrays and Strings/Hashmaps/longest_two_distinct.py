@@ -1,3 +1,8 @@
+"""
+Given a string s, find the length of the longest substring 
+that contains at most two distinct characters.
+"""
+
 def longest_two_distinct(s):
     left = 0
     curr_sum = 0
