@@ -5,7 +5,6 @@ that contains at most two distinct characters.
 
 def longest_two_distinct(s):
     left = 0
-    curr_sum = 0
     max_sum = 0
 
     freqmap = {}
