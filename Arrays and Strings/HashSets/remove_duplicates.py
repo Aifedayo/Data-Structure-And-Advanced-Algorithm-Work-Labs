@@ -1,5 +1,5 @@
 def remove_duplicates(nums):
-    unique_nums = set()
+    unique_nums = set() # Initialize an empty hash set
     result = []
 
     for num in nums:
