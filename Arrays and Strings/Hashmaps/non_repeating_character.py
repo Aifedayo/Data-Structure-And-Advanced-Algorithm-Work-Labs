@@ -20,7 +20,7 @@ def repeating(s):
     return -1
 
 
-print(repeating('aabbccc'))
+print(repeating('aabbdccc'))
 
 # Time complexity: O(n)
 # Space Complexity: 0(n)
