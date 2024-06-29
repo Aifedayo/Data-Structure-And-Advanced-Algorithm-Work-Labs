@@ -14,13 +14,8 @@ def first_non_repeating(s):
             seen_multiple.add(char)
         else:
             seen_once.append(char)
-        
 
-    for key, value in hashstring.items():
-        if value == 1:
-            return key
-
-    return None
+    return seen_once[0] if seen_once else None
 
 
 print(first_non_repeating('swiss'))
