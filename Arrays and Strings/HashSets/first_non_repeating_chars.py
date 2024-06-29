@@ -4,10 +4,13 @@ If all characters are repeated, return None.
 """
 
 def first_non_repeating(s):
-    hashstring = {}
+    seen_once = []
+    seen_multiple = set()
 
-    for char in range(len(s)):
-        hashstring[s[char]] = hashstring.get(s[char], 0) + 1
+    for char in s:
+        if char in seen_multiple:
+            continue
+        
 
     for key, value in hashstring.items():
         if value == 1:
