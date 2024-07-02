@@ -11,6 +11,7 @@ def first_non_repeating(s):
         if char in seen_multiple:
             continue
         if char in seen_once:
+            seen_once.remove(char)
             seen_multiple.add(char)
         else:
             seen_once.append(char)
