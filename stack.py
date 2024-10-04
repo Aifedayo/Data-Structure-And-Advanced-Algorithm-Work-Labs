@@ -33,12 +33,12 @@ class Stack:
     def size(self):
         return len(self.arr)
 
-    
 
-stack = Stack()
-stack.push(10)
-stack.push(20)
-print(stack.peek())  # Output: 20
-print(stack.pop()) 
-print(stack.is_empty())
-print(stack.size())
+if __name__ == '__main__':
+    stack = Stack()
+    stack.push(10)
+    stack.push(20)
+    print(stack.peek())  # Output: 20
+    print(stack.pop()) 
+    print(stack.is_empty())
+    print(stack.size())
