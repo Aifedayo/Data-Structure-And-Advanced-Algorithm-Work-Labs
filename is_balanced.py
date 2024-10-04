@@ -1,3 +1,9 @@
+"""
+Next Task: Check for Balanced Parentheses
+Objective: Write a function that uses a stack to check if a string of 
+parentheses is balanced.
+"""
+
 from stack import Stack
 
 def is_balanced(s):
@@ -9,16 +15,11 @@ def is_balanced(s):
     }
     for brac in s:
         if brac in closing_key:
-            if stack.is_empty():
+            if stack.is_empty() or closing_key[brac] != stack.pop():
                 return False
-            else:
-                if closing_key[brac] == stack.peek():
-                    stack.pop()
-                else:
-                    return False
         else:
             stack.push(brac)
-    return True
+    return stack.is_empty()
 
 if __name__ == "__main__":
     print(is_balanced("(){}[]"))   # Output: True
