@@ -18,18 +18,12 @@ class Queue:
         return self.queue.appendleft(item)
     
     def dequeue(self):
-        try:
-            if not self.is_empty():
-                return self.queue.pop()
-        except Exception as e:
-            return str(e)
+        if not self.is_empty():
+            return self.queue.pop()
 
     def peek(self):
-        try:
-            if not self.is_empty():
-                return self.queue[-1]
-        except Exception as e:
-            return (str(e))
+        if not self.is_empty():
+            return self.queue[-1]
 
     def size(self):
         return len(self.queue)
