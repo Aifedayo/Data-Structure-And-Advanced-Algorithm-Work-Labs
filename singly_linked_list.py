@@ -1,0 +1,59 @@
+"""
+Task: Implement a Linked List
+A linked list is a linear data structure where elements are stored in nodes, 
+and each node points to the next one. Unlike arrays, linked lists don't store 
+data in contiguous memory locations.
+"""
+
+class Node:
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_beginning(self, value):
+        node = Node(value, self.head) # Create a new node with the given data
+        self.head = node # head now points to the new node
+
+
+    def insert_at_end(self, value):
+        node = Node(value)
+        if self.head is None:
+            self.head = node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            
+            current.next = node
+        
+    def delete_node(self, key):
+        curr = self.head
+        if curr and curr.data == key:
+            self.head = curr.next
+            return
+        
+        prev = None
+        while curr and curr.data != key:
+            prev = curr
+            curr = curr.next
+
+        if curr is None:
+            print("None with value", key, "not found")
+        
+        prev.next = curr.next
+
+
+
+if __name__ == "__main__":
+    ll = LinkedList()
+    ll.insert_at_beginning(10)
+    ll.insert_at_beginning(20)
+    ll.insert_at_beginning(30)
+
+    ll.insert_at_end(40)
+    ll.insert_at_end(50)
