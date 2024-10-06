@@ -47,13 +47,35 @@ class LinkedList:
         
         prev.next = curr.next
 
+    def search(self, key):
+        curr = self.head
+        while curr:
+            if curr.data == key:
+                return True
+            curr = curr.next
+        return False
+
+    def traverse(self):
+        if self.head is None:
+            print('Linked list is empty')
+            return
+        curr = self.head
+        while curr:
+            print(curr.data, end=" " if curr.next else "\n")
+            curr = curr.next
+
 
 
 if __name__ == "__main__":
     ll = LinkedList()
     ll.insert_at_beginning(10)
     ll.insert_at_beginning(20)
-    ll.insert_at_beginning(30)
-
     ll.insert_at_end(40)
     ll.insert_at_end(50)
+    ll.traverse()  # Output: 20 -> 10 -> 40 -> 50
+
+    ll.delete_node(20)
+    ll.traverse()  # Output: 10 -> 40 -> 50
+
+    print(ll.search(40))  # Output: True
+    print(ll.search(99))  # Output: False
