@@ -59,7 +59,20 @@ class DoublyLinkedList:
             curr = curr.next
         return f"{value} not in the list"
 
-
+    def search(self, key):
+        # Implement early return
+        if self.head is None:
+            return f"{key} not in list"
+        
+        curr = self.head
+        while curr:
+            if curr.data == key:
+                return (f"{key} is in the list")
+            curr = curr.next
+        return f"{key} not in the list"
+    
+    def trasverse(self):
+        
 
 
 if __name__ == "__main__":
@@ -71,3 +84,9 @@ if __name__ == "__main__":
     dll.insert_at_end(10)
     dll.insert_at_end(20)
     dll.insert_at_end(30)
+
+    print(dll.delete(20))  # Output: Deleted 20
+    print(dll.delete(40))
+
+    print(dll.search(20))
+    print(dll.search(40)) 
