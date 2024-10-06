@@ -71,8 +71,30 @@ class DoublyLinkedList:
             curr = curr.next
         return f"{key} not in the list"
     
-    def trasverse(self):
+    def forward_traverse(self):
+        # Implement early return
+        if self.head is None:
+            return "Empty list, nothing to return"
         
+        curr = self.head
+        while curr:
+            print(curr.data, end="-->" if curr.next else "\n")
+            curr = curr.next
+
+    def backward_trasverse(self):
+        # Implement early return
+        if self.head is None:
+            return "Empty list, nothing to return"
+        
+        curr = self.head
+        while curr.next:
+            curr = curr.next
+        while curr:
+            print(curr.data, end="-->" if curr.prev else "\n")
+            curr = curr.prev
+
+
+
 
 
 if __name__ == "__main__":
@@ -84,9 +106,13 @@ if __name__ == "__main__":
     dll.insert_at_end(10)
     dll.insert_at_end(20)
     dll.insert_at_end(30)
+    print(dll.forward_traverse())
+    print(dll.backward_trasverse())
 
-    print(dll.delete(20))  # Output: Deleted 20
-    print(dll.delete(40))
+    # print(dll.delete(20))  # Output: Deleted 20
+    # print(dll.delete(40))
+    
+    # print(dll.forward_traverse())
 
-    print(dll.search(20))
-    print(dll.search(40)) 
+    # print(dll.search(20))
+    # print(dll.search(40))
