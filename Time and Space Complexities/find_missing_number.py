@@ -14,4 +14,4 @@ arr = [3,0,2]
 print(find_missing_number(arr))
 
 # Time complexity: O(n)
-# Space complexity: O(2n)
+# Space complexity: O(1)
