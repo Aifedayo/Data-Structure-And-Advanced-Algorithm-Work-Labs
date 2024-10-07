@@ -13,4 +13,4 @@ def find_pairs(arr, target):
 print(find_pairs([1,3,4,2], target=5))
 
 # Time complexity: O(n)
-# Space complexity: O(2n)
+# Space complexity: O(n)
