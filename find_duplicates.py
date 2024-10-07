@@ -10,4 +10,4 @@ def find_duplicates(arr):
 
 # Time complexity: 0(n) Because we loop through once, algo run time gets bigger per input size
 
-# Space complexity: 0(n^2): The space used doubles with each input size
+# Space complexity: 0(n): The space grows linearly in size with each input
