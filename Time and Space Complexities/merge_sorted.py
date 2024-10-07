@@ -21,4 +21,4 @@ def merge_sorted(arr1, arr2):
         
 
 # Time complexity: 0(n)
-# Space complexity: 0(1) Auxilary space
+# Space complexity: 0(n) Auxilary space

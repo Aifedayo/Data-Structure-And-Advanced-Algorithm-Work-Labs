@@ -6,5 +6,5 @@ def reverse_list(arr):
         right -= 1
     return arr
 
-# Time complexity: 0(1)
+# Time complexity: 0(n)
 # Space complexity: O(1)
