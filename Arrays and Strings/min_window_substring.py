@@ -26,3 +26,6 @@ def min_window(s, t):
 
             if right - left + 1 < ans[0]:
                 ans = (right - left + 1, left, right)
+
+            window_counts[char] -= 1
+            if char in dict_t and window_counts[char] < dict_t[char]
