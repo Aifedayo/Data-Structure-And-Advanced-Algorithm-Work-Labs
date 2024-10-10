@@ -25,4 +25,4 @@ def min_window(s, t):
             char = s[left]
 
             if right - left + 1 < ans[0]:
-                ans
+                ans = (right - left + 1, left, right)
