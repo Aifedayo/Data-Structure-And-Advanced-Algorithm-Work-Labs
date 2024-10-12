@@ -28,4 +28,11 @@ def min_window(s, t):
                 ans = (right - left + 1, left, right)
 
             window_counts[char] -= 1
-            if char in dict_t and window_counts[char] < dict_t[char]
+            if char in dict_t and window_counts[char] < dict_t[char]:
+                formed -= 1
+
+            left += 1
+
+        right += 1
+
+    return "" if ans[0] == float("inf") else s[ans[1]: ans[2] + 1]
