@@ -36,3 +36,8 @@ def min_window(s, t):
         right += 1
 
     return "" if ans[0] == float("inf") else s[ans[1]: ans[2] + 1]
+
+# Test case
+s = "ADOBECODEBANC"
+t = "ABC"
+print(min_window(s, t)) 
