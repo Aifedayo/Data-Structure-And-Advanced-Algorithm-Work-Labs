@@ -16,7 +16,7 @@ def min_window(s, t):
 
     while right < len(s):
         char = s[right]
-        window_counts = window_counts.get(char, 0) + 1
+        window_counts[char] = window_counts.get(char, 0) + 1
 
         if char in dict_t and window_counts[char] == dict_t[char]:
             formed += 1
