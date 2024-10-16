@@ -3,7 +3,7 @@ def max_sum_subarray(arr, key):
     window_sum = 0
 
     for i in range(key):
-        window_sum += i
+        window_sum += arr[i]
 
     max_sum = window_sum
 
