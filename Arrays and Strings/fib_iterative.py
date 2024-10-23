@@ -1,13 +1,15 @@
 def fib_iterative(nterm):
+    if nterm == 0:
+        return 0
+    
+    elif nterm == 1:
+        return 1
+    
     first, second = 0, 1
-    value = first + second
 
-    while nterm-1 >= 2:
-        temp = value
-        value = value + second
-        second = temp
-
-        nterm -= 1
-    return value
+    for _ in range(2, nterm+1):
+        first, second = second, first + second
+    
+    return second
 
 print(fib_iterative(7))
