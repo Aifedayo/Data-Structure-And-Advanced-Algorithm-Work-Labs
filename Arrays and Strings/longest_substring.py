@@ -13,4 +13,4 @@ def longest_subtring(s):
     return max_length
 
 
-print(longest_subtring("zainb"))
+print(longest_subtring("bbbbb"))
