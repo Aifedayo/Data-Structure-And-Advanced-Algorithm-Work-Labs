@@ -1,3 +1,6 @@
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
 def fib_recur(nterm):
     # base case
     if nterm == 0 or nterm == 1:
