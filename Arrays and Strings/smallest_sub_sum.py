@@ -1,5 +1,5 @@
 def smallest_sub_array(arr, S):
-    window_sum =0
+    window_sum = 0
     min_length = float('inf')
     left = 0
 
@@ -14,4 +14,4 @@ def smallest_sub_array(arr, S):
     return min_length if min_length != float('inf') else 0
 
 
-print(smallest_sub_array(arr=[2,1,5,2,3,2], S=5))
+print(smallest_sub_array(arr=[2,1,5,2,3,2], S=7))
