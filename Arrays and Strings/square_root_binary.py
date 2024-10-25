@@ -14,10 +14,10 @@ def square_root(x):
         
         elif mid_squared < x:
             left = mid + 1
-            result = mid
+            result = mid # Saving potential value
         else:
             right = mid - 1
 
     return result
 
-print(square_root(8))
+print(square_root(16))
