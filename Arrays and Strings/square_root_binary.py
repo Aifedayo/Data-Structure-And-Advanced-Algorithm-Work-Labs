@@ -20,4 +20,4 @@ def square_root(x):
 
     return result
 
-print(square_root(16))
+print(square_root(8))
