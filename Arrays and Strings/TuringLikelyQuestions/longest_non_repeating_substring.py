@@ -4,17 +4,19 @@ Problem: For a given string, find the length of the longest substring
 """
 
 def longest_substring(string):
-    right = 0
+    left = 0
     max_length = 0
     char_set = set()
 
-    while right < len(string):
-        if string[right] in char_set:
-            char_set = set()
+    for right in range(len(string)):
+        while string[right] in char_set:
+            char_set.remove(string[left])
+            left += 1
+            
         char_set.add(string[right])
-        right += 1
+        
 
-        max_length = max(max_length, len(char_set))
+        max_length = max(max_length, right - left + 1)
     return max_length
 
 
