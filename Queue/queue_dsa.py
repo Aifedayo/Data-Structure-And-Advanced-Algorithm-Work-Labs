@@ -27,13 +27,36 @@ class Queue:
 
     def size(self):
         return len(self.queue)
+    
+    def print_queue(self):
+        return self.queue
+    
+class QueueReverser:
+    def reverse_queue(self, q):
+        stack = []
+
+        while not q.is_empty():
+            stack.append(q.dequeue())
+
+        while stack:
+            q.enqueue(stack.pop())
+
+        return q
+
+ 
+
 
 if __name__ == '__main__':
     queue = Queue()
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
+    print(queue)
+    print(queue.print_queue())
     print(queue.peek())  # Output: 1
     print(queue.dequeue())  # Output: 1
     print(queue.is_empty())  # Output: False
     print(queue.size())  # Output: 2
+
+    reverser = QueueReverser()
+    print(reverser.reverse_queue(queue))
