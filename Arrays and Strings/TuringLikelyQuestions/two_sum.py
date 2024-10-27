@@ -9,7 +9,6 @@ def two_sum(arr, target):
         diff = target - num
         if diff in hashsum:
             return [hashsum[diff], idx]
-        else:
-            hashsum[num] = idx
+        hashsum[num] = idx
 
     return []
