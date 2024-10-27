@@ -84,6 +84,31 @@ class LinkedList:
                 return True
         
         return False
+    
+    def detect_and_remove(self):
+        slow = fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                break
+        else:
+            return False
+        
+        slow = self.head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next
+
+        while fast.next != slow:
+            fast = fast.next
+
+        fast.next = None
+
+        return True
+
 
 
 if __name__ == "__main__":
