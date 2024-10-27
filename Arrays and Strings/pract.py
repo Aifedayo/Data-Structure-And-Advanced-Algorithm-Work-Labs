@@ -61,6 +61,15 @@ class SinglyLinkedList:
             curr = tmp
 
         return prev
+    
+    def delete_node(self, key):
+        curr = self.head
+        prev = None
+
+        if curr and curr.data == key:
+            self.head = curr.next
+            curr = None
+            return
 
 
             
