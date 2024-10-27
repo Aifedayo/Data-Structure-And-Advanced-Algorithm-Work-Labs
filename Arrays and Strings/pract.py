@@ -9,7 +9,8 @@ class SinglyLinkedList:
         self.head = None
 
     def insert_at_beginning(self, data):
-        node = Node(data, self.head)
+        node = Node(data)
+        node.next = self.head
         self.head = node
 
     def insert_at_end(self, data):
@@ -27,15 +28,42 @@ class SinglyLinkedList:
 
     def search(self, data):
         if self.head is None:
-            return f'Empty List!'
+            return 'Empty List!'
         
         else:
             curr = self.head
-            while curr.next:
+            while curr:
                 if curr.data == data:
                     return True
                 curr = curr.next
-        return f'Not found'
+        return False
+    
+    def delete(self, data):
+        if self.head is None:
+            return 'Empty List'
+        
+        curr = self.head
+        while curr.next:
+            if curr.next.data == data:
+                curr.next = curr.next.next
+                return
+            curr = curr.next
+        return 'Value not found'
+    
+    def reverse(self):
+        prev = None
+        curr = self.head
+
+        while curr:
+            tmp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = tmp
+
+        return prev
+
+
+            
 
 
 ll = SinglyLinkedList()
