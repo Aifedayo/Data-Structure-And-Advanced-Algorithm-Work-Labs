@@ -1,6 +1,6 @@
 def longest_subtring(s):
     char_set = set()
-    left, right = 0, 0
+    right = 0
     max_length = 0
 
     while right < len(s):
@@ -13,4 +13,4 @@ def longest_subtring(s):
     return max_length
 
 
-print(longest_subtring("bbbbb"))
+print(longest_subtring("bbabcbb"))
