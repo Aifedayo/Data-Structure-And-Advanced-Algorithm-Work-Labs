@@ -65,6 +65,26 @@ class LinkedList:
             curr = curr.next
 
 
+    """
+    Concept: Detecting a Cycle in a Linked List
+    A cycle (or loop) in a linked list occurs when a node points 
+    back to one of the previous nodes, creating an endless loop. 
+    Detecting this is important because a cycle can cause infinite 
+    loops in traversals, leading to performance issues or even system crashes.
+    """
+    def detect_cycle(self):
+        slow = self.head
+        fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                return True
+        
+        return False
+
 
 if __name__ == "__main__":
     ll = LinkedList()
