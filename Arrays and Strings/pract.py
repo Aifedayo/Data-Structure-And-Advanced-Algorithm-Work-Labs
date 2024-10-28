@@ -1,18 +1,12 @@
-from Stack.stack import Stack
+def find_majority_element(arr):
 
-def is_balanced(s):
-    stack = Stack()
+    hashfreq = {}
 
-    closing_key = {
-        ')': '(',
-        '}': '{',
-        ']': '['
-    }
+    for num in arr:
+        hashfreq[num] = hashfreq.get(num, 0) + 1
 
-    for brac in s:
-        if brac in closing_key:
-            if stack.is_empty() or stack.pop() != closing_key[brac]:
-                return False
-        else:
-            stack.push(brac)
-    return stack.is_empty()
+    maj_element = max(hashfreq, key=hashfreq.get)
+    return maj_element
+        
+
+print(find_majority_element([1,1,2,4,5,5,5,5]))
