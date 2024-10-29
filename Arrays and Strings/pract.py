@@ -1,24 +1,19 @@
 """
-Given a string s, find the length of the longest substring 
-that contains at most two distinct characters.
+Given a string, find the first non-repeating character in it. 
+Return its index. If it doesn’t exist, return -1.
 """
 
-def longest_two_distinct(s):
-    freqmap = {}
-    left = 0
-    max_count = 0
+def repeating(s):
+    # using hashset
+    seen_once = []
+    seen_multiple = set()
+    for char in s:
+        if char not in seen_once:
+            seen_once.append(char)
+        else:
+            seen_once.remove(char)
+            seen_multiple.add(char)
+    return seen_once[0] if seen_once else None\
+    
 
-    for right in range(len(s)):
-        freqmap[s[right]] = freqmap.get(s[right], 0) + 1
-        
-        while len(freqmap) > 2:
-            freqmap[s[left]] -= 1
-            if freqmap[s[left]] == 0:
-                del freqmap[s[left]]
-            left += 1
-        max_count = max(max_count, right - left + 1)
-    return max_count
-
-            
-
-print(longest_two_distinct("eceeeeba"))
+print(repeating('swiss'))
