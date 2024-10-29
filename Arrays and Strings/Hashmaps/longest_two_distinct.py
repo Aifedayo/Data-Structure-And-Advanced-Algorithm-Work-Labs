@@ -25,4 +25,4 @@ def longest_two_distinct(s):
     return max_sum
             
 
-print(longest_two_distinct("eceba"))
+print(longest_two_distinct("eceeeeba"))

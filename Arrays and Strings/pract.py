@@ -1,16 +1,24 @@
 """
-Given a string, find the first non-repeating character. 
-If all characters are repeated, return None.
+Given a string s, find the length of the longest substring 
+that contains at most two distinct characters.
 """
-def first_non_repeating(string):
+
+def longest_two_distinct(s):
     freqmap = {}
-    for i in range(len(string)):
-        freqmap[string[i]] = freqmap.get(string[i], 0) + 1
+    left = 0
+    max_count = 0
 
-    for key, value in freqmap.items():
-        if value == 1:
-            return key
-    return None
+    for right in range(len(s)):
+        freqmap[s[right]] = freqmap.get(s[right], 0) + 1
+        
+        while len(freqmap) > 2:
+            freqmap[s[left]] -= 1
+            if freqmap[s[left]] == 0:
+                del freqmap[s[left]]
+            left += 1
+        max_count = max(max_count, right - left + 1)
+    return max_count
 
+            
 
-print(first_non_repeating('swiss'))
+print(longest_two_distinct("eceeeeba"))
