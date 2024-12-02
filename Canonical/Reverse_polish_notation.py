@@ -1,19 +1,22 @@
 def RPN(arr):
     stack = []
-    operators = ["+", "*", "-", "/"]
+    operators = {"+", "*", "-", "/"}
     result = 0
     for val in arr:
         if val not in operators:
-            stack.append(val)
+            stack.append(float(val))
         else:
+            b = stack.pop()
+            a = stack.pop()
             if val == '+':
-                result = float(stack.pop(-2)) + float(stack.pop(-1))
+                stack.append(a+b)
+            elif val == '-':
+                stack.append(a - b)
             elif val == '*':
-                result = float(stack.pop(-2)) * float(stack.pop(-1))
+                stack.append(a * b)
             elif val == '/':
-                result = float(stack.pop(-2)) / float(stack.pop(-1))
-            stack.append(str(result))
-    return result
+                stack.append(a / b)
+    return stack[0]
 
 
 arr = ["2", "1", "+", "3", "*"]
