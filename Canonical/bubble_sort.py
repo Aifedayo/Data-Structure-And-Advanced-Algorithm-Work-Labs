@@ -1,4 +1,4 @@
-def binary_sort(arr):
+def bubble_sort(arr):
     arr_len = len(arr) - 1
     for i in range(arr_len):
         for j in range(arr_len):
@@ -7,4 +7,4 @@ def binary_sort(arr):
     return arr
 
 
-print(binary_sort([32, 1, 9, 6]))
+print(bubble_sort([32, 1, 9, 6]))
