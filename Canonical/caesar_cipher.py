@@ -7,8 +7,14 @@ def cipher(a_string, key):
     for word in a_string:
         if word in lower:
             new = (lower.index(word) + key) % 26
-            encrypt += new
-        elif word in upper 
+            encrypt += lower[new]
+        elif word in upper:
+            new = (upper.index(word) + key) % 26
+            encrypt += upper[new]
+        else:
+            encrypt += word
+
+    return encrypt
 
 
-print(cipher('word', 3))
+print(cipher('abc', 3))
