@@ -9,21 +9,41 @@ class LinkedList:
         self.head = None
     
     def __str__(self):
+        result = []
         node = self.head
         while node:
-            print(node.data)
+            result.append(str(node.data))
             node = node.next
+        return "->".join(result)
 
     def append(self, data):
         node = Node(data=data)
         if self.head is None:
             self.head = node
             return
-        
+            
         current = self.head
         while current.next:
             current = current.next
         current.next = node
+        return self.__str__()
+
+    def append_list(self, a_list):
+        if not a_list:
+            return
+
+        if self.head is None:
+            self.head = Node(data=a_list[0])
+            a_list = a_list[1:]
+
+        current = self.head
+        while current.next:
+            current = current.next
+        
+        for data in a_list:
+            current.next = Node(data=data)
+            current = current.next
+
         
     def search(self, value):
         if self.head is None:
@@ -71,3 +91,9 @@ class LinkedList:
                     return True
             except:
                 return False
+
+
+ll = LinkedList()
+a_list = list(range(1, 101))
+ll.append_list(a_list)
+print(ll)
