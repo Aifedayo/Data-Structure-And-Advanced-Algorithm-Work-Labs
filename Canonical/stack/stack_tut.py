@@ -6,7 +6,7 @@ class Node:
 
 class Stack:
     def __init__(self):
-        self.items = []
+        self.head = None
 
     def push(self, value):
         node = Node(value)
@@ -22,3 +22,12 @@ class Stack:
         poppedhead = self.head
         self.head = self.head.next
         return poppedhead.data 
+    
+
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+for i in range(3):
+    print(stack.pop())
