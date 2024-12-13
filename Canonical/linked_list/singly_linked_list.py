@@ -49,3 +49,12 @@ class LinkedList:
             previous = curr
             curr = curr.next
         
+    def reverse(self):
+        curr = self.head
+        previous = None
+        while curr:
+            temp = curr.next # preserve the next node before breaking off the link
+            curr.next = previous # update the link off the curr topoint to None for astart
+            previous = curr
+            curr = temp
+        self.head = previous
