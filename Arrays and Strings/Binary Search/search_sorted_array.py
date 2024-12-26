@@ -24,5 +24,5 @@ def search_rotated(nums, target):
             return mid
     return -1
 
-print(search_rotated(nums=[4,5,6,7,0,1,2], target=3))
+print(search_rotated(nums=[4,5,6,7,0,1,2], target=4))
             

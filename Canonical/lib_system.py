@@ -50,9 +50,16 @@ class Member:
         else:
             print('You do not have this book to return!')
 
+    def get_borrowed_books(self):
+        return f"{self.name}'s borrowed books: {self.borrowed_books}"
+
 
 lib = Library()
 lib.add_book('Once upon a Time', 'Akeem', 12)
 lib.add_book('Once upon a Time', 'Akeem', 2)
 lib.add_book('Data Scientist', 'Goldmann', 1)
 print(lib.get_books())
+
+member = Member("John Doe")
+member.borrow(lib, "Once Upon a Time", "Akeem")
+print(member.get_borrowed_books())
